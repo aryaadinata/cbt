@@ -19,7 +19,7 @@ interface AppInfo {
   tagline: string;
   icon: any;
   color: string;
-  url: string;
+  port: number;
 }
 
 const ECOSYSTEM_APPS: AppInfo[] = [
@@ -29,7 +29,7 @@ const ECOSYSTEM_APPS: AppInfo[] = [
     tagline: "Akademik & SIAK",
     icon: faGraduationCap,
     color: "bg-blue-50 text-blue-700 border-blue-200",
-    url: "http://localhost:3000",
+    port: 3000,
   },
   {
     id: "keuangan",
@@ -37,7 +37,7 @@ const ECOSYSTEM_APPS: AppInfo[] = [
     tagline: "SPP & Keuangan",
     icon: faCoins,
     color: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    url: "http://localhost:3001",
+    port: 3001,
   },
   {
     id: "perpustakaan",
@@ -45,7 +45,7 @@ const ECOSYSTEM_APPS: AppInfo[] = [
     tagline: "E-Library",
     icon: faBookOpen,
     color: "bg-amber-50 text-amber-700 border-amber-200",
-    url: "http://localhost:3002",
+    port: 3002,
   },
   {
     id: "sarpras",
@@ -53,7 +53,7 @@ const ECOSYSTEM_APPS: AppInfo[] = [
     tagline: "Aset & Inventaris",
     icon: faBoxesStacked,
     color: "bg-indigo-50 text-indigo-700 border-indigo-200",
-    url: "http://localhost:3003",
+    port: 3003,
   },
   {
     id: "pkl",
@@ -61,7 +61,7 @@ const ECOSYSTEM_APPS: AppInfo[] = [
     tagline: "Vokasi & DUDI",
     icon: faBriefcase,
     color: "bg-violet-50 text-violet-700 border-violet-200",
-    url: "http://localhost:3004",
+    port: 3004,
   },
   {
     id: "cbt",
@@ -69,9 +69,49 @@ const ECOSYSTEM_APPS: AppInfo[] = [
     tagline: "Ulangan & SAS",
     icon: faShieldHalved,
     color: "bg-indigo-50 text-indigo-700 border-indigo-200",
-    url: "http://localhost:3005",
+    port: 3005,
   },
 ];
+
+export function resolveAppUrl(defaultPort: number, path = ""): string {
+  if (typeof window === "undefined") {
+    return `http://localhost:${defaultPort}${path}`;
+  }
+  const protocol = window.location.protocol;
+  const hostname = window.location.hostname;
+
+  // 1. Jika di localhost / 127.0.0.1
+  if (hostname === "localhost" || hostname === "127.0.0.1") {
+    return `${protocol}//localhost:${defaultPort}${path}`;
+  }
+
+  // 2. Jika diakses via IP address (misal IP lokal 192.168.x.x atau IP publik server)
+  const isIp = /^(\d{1,3}\.){3}\d{1,3}$/.test(hostname);
+  if (isIp) {
+    return `${protocol}//${hostname}:${defaultPort}${path}`;
+  }
+
+  // 3. Jika diakses via Domain / Subdomain (misal cbt.sekolah.sch.id atau siak.sekolah.sch.id)
+  const subdomainMap: Record<number, string> = {
+    3000: "siak",
+    3001: "keuangan",
+    3002: "perpustakaan",
+    3003: "sarpras",
+    3004: "pkl",
+    3005: "cbt",
+  };
+
+  const targetSub = subdomainMap[defaultPort];
+  if (targetSub) {
+    const parts = hostname.split(".");
+    if (parts.length >= 2) {
+      const rootDomain = parts.slice(1).join(".");
+      return `${protocol}//${targetSub}.${rootDomain}${path}`;
+    }
+  }
+
+  return `${protocol}//${hostname}:${defaultPort}${path}`;
+}
 
 export default function AppSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
@@ -114,10 +154,11 @@ export default function AppSwitcher() {
           <div className="grid grid-cols-2 gap-1.5">
             {ECOSYSTEM_APPS.map((app) => {
               const isCurrent = app.id === "cbt";
+              const targetUrl = resolveAppUrl(app.port);
               return (
                 <a
                   key={app.id}
-                  href={app.url}
+                  href={targetUrl}
                   className={`p-2 rounded-xl transition flex flex-col items-center text-center group border ${
                     isCurrent
                       ? "bg-blue-50/70 border-blue-200 text-blue-900"
@@ -143,7 +184,7 @@ export default function AppSwitcher() {
 
           <div className="pt-2 mt-2 border-t border-slate-100 text-center">
             <a
-              href="http://localhost:3000/portal"
+              href={resolveAppUrl(3000, "/portal")}
               className="text-[11px] text-blue-600 hover:text-blue-700 font-bold hover:underline"
             >
               Lihat Seluruh Portal Layanan &rarr;

@@ -120,6 +120,13 @@ export default function DokumenAdministrasiPage() {
   // - "harian": Daftar Hadir & Berita Acara (per Hari, Mapel, Sesi, Ruangan)
   // - "kartu" : Kartu Login Peserta (Sekali Cetak per Ruangan)
   const [activeTab, setActiveTab] = useState<"harian" | "kartu">("harian");
+  const [cbtServerUrl, setCbtServerUrl] = useState<string>("http://localhost:3005");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCbtServerUrl(window.location.origin);
+    }
+  }, []);
 
   // State Data Master
   const [loading, setLoading] = useState<boolean>(true);
@@ -891,7 +898,7 @@ export default function DokumenAdministrasiPage() {
             <div className="flex">
               <span className="w-36 font-bold">Alamat Server CBT</span>
               <span className="w-4">:</span>
-              <span className="font-mono">http://localhost:3005</span>
+              <span className="font-mono">{cbtServerUrl}</span>
             </div>
           </div>
 
@@ -1120,7 +1127,7 @@ export default function DokumenAdministrasiPage() {
                 {/* Footer Ringkas Kartu (Tanpa Pengesahan Kepsek) */}
                 <div className="pt-1.5 mt-1.5 border-t border-slate-200 flex items-center justify-between gap-2 text-[9px] text-slate-600">
                   <span className="font-semibold text-slate-700">
-                    Alamat CBT: http://localhost:3005
+                    Alamat CBT: {cbtServerUrl}
                   </span>
                   <span className="text-[8px] text-slate-400 italic print:text-[7px]">
                     * Dual-Login: Kartu ini / Akun SIAK
