@@ -743,6 +743,7 @@ export default function ExamMappingPage({ params }: { params: Promise<{ id: stri
                 type="button"
                 onClick={() => setShowModal(false)}
                 className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer shrink-0"
+                title="Tutup"
               >
                 <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>

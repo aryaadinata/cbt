@@ -14,6 +14,7 @@ import {
   faExpand,
   faShieldHalved,
   faCircleCheck,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "@/context/AuthContext";
 import { useCbtSettings } from "@/context/CbtSettingsContext";
@@ -1436,9 +1437,10 @@ export default function KerjakanUjianPage({ params }: { params: Promise<{ id: st
                   setShowReviewModal(false);
                   router.push("/");
                 }}
-                className="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-xs transition cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup &amp; Keluar"
               >
-                Tutup &amp; Keluar
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 

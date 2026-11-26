@@ -2261,10 +2261,12 @@ export default function PengawasRuangPage() {
                 <span>Cetak Sekarang (A4)</span>
               </button>
               <button
+                type="button"
                 onClick={() => setPrintType(null)}
-                className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
           </div>

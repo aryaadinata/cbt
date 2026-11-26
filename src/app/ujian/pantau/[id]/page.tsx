@@ -1892,10 +1892,12 @@ export default function LiveMonitoringPage({ params }: { params: Promise<{ id: s
                 </div>
               </div>
               <button
+                type="button"
                 onClick={() => setShowAntiCheatModal(false)}
-                className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 

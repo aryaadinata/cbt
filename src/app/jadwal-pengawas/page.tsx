@@ -1823,9 +1823,10 @@ export default function JadwalPengawasPage() {
                 <button
                   type="button"
                   onClick={() => setShowRoomModal(false)}
-                  className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                  className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
               </div>
 
@@ -1989,9 +1990,10 @@ export default function JadwalPengawasPage() {
                 <button
                   type="button"
                   onClick={() => setShowBackupModal(false)}
-                  className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                  className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
               </div>
 
@@ -2130,9 +2132,10 @@ export default function JadwalPengawasPage() {
                 <button
                   type="button"
                   onClick={() => setShowAutoModal(false)}
-                  className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                  className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
               </div>
 
@@ -2280,9 +2283,10 @@ export default function JadwalPengawasPage() {
                 <button
                   type="button"
                   onClick={() => setShowPrintModal(false)}
-                  className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                  className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
               </div>
 
@@ -2837,9 +2841,10 @@ export default function JadwalPengawasPage() {
                 <button
                   type="button"
                   onClick={() => setShowArchiveModal(false)}
-                  className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                  className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
               </div>
 

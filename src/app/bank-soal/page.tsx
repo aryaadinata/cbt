@@ -2030,9 +2030,10 @@ export default function BankSoalPage() {
               <button
                 type="button"
                 onClick={() => setShowWordModal(false)}
-                className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 
@@ -2110,10 +2111,12 @@ export default function BankSoalPage() {
                   </p>
                 </div>
                 <button
+                  type="button"
                   onClick={() => setShowPreviewModal(false)}
-                  className="w-8 h-8 rounded-xl bg-slate-100 text-slate-400 hover:text-slate-800 flex items-center justify-center text-sm font-bold cursor-pointer"
+                  className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
               </div>
 
@@ -2245,9 +2248,10 @@ export default function BankSoalPage() {
               <button
                 type="button"
                 onClick={() => setShowAddSubjectModal(false)}
-                className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 
@@ -2384,9 +2388,10 @@ export default function BankSoalPage() {
               <button
                 type="button"
                 onClick={() => setShowLinkBankModal(false)}
-                className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 
@@ -2448,9 +2453,10 @@ export default function BankSoalPage() {
               <button
                 type="button"
                 onClick={() => setShowCreateModal(false)}
-                className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 
@@ -2582,9 +2588,10 @@ export default function BankSoalPage() {
               <button
                 type="button"
                 onClick={() => setShowAssignModal(false)}
-                className="w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 flex items-center justify-center cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 
@@ -2689,9 +2696,10 @@ export default function BankSoalPage() {
               <button
                 type="button"
                 onClick={() => setShowExamSettingsModal(false)}
-                className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
-                <FontAwesomeIcon icon={faXmark} />
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
 

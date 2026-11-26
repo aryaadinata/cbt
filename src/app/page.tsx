@@ -1118,7 +1118,18 @@ export default function HomePage() {
         {/* Modal Token */}
         {selectedExamForToken && (
           <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
-            <div className="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200/80 space-y-4">
+            <div className="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200/80 space-y-4 relative">
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedExamForToken(null);
+                  setTokenError(null);
+                }}
+                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
+              >
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
+              </button>
               <div className="text-center space-y-2">
                 <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 border border-amber-200/60 mx-auto flex items-center justify-center text-2xl shadow-inner">
                   <FontAwesomeIcon icon={faKey} />
@@ -1532,6 +1543,7 @@ export default function HomePage() {
                   type="button"
                   onClick={() => setShowCreateModal(false)}
                   className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
                   <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
@@ -1618,6 +1630,7 @@ export default function HomePage() {
                     setEditingExamTitle("");
                   }}
                   className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                  title="Tutup"
                 >
                   <FontAwesomeIcon icon={faXmark} className="text-sm" />
                 </button>
@@ -2014,6 +2027,7 @@ export default function HomePage() {
                 type="button"
                 onClick={() => setShowCreateModal(false)}
                 className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
                 <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
@@ -2103,6 +2117,7 @@ export default function HomePage() {
                   setEditingExamTitle("");
                 }}
                 className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
                 <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>

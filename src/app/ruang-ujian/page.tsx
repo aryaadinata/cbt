@@ -936,6 +936,7 @@ export default function RuangUjianPage() {
                 type="button"
                 onClick={() => setShowAddModal(false)}
                 className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
                 <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
@@ -1031,6 +1032,7 @@ export default function RuangUjianPage() {
                 type="button"
                 onClick={() => setShowEditModal(false)}
                 className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
                 <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
@@ -1133,6 +1135,7 @@ export default function RuangUjianPage() {
                 type="button"
                 onClick={() => setShowPlottingModal(false)}
                 className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer"
+                title="Tutup"
               >
                 <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>

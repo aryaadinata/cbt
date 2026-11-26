@@ -17,6 +17,7 @@ import {
   faLayerGroup,
   faCalendarDays,
   faFolderOpen,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import QRCode from "qrcode";
 import Swal from "sweetalert2";
@@ -1787,9 +1788,10 @@ export default function DokumenAdministrasiPage() {
               <button
                 type="button"
                 onClick={() => setActivePrintJob(null)}
-                className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition cursor-pointer"
+                className="text-slate-400 hover:text-slate-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition cursor-pointer shrink-0"
+                title="Tutup Pratinjau"
               >
-                Tutup
+                <FontAwesomeIcon icon={faXmark} className="text-sm" />
               </button>
             </div>
           </div>
